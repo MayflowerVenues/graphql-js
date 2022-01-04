@@ -22,7 +22,7 @@ const MIN_INT = -2147483648;
 
 const green = '\x1B[32m';
 const yellow = '\x1B[33m';
-const red = '\e[1;31m';
+const red = '\x1B[31m';
 const warn = (error: string, msg: string) => {
   if (
     process.env.NODE_ENV === 'development' ||

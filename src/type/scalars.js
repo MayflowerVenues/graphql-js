@@ -22,7 +22,7 @@ const MIN_INT = -2147483648;
 
 const green = '\x1B[32m';
 const yellow = '\x1B[33m';
-const red = '\x1B[31m';
+const red = '\x1b[31m';
 const warn = (error: string, msg: string) => {
   if (
     process.env.NODE_ENV === 'development' ||
@@ -32,7 +32,7 @@ const warn = (error: string, msg: string) => {
     console.warn(`
 ${yellow}${error}${red}:
   ${msg}
-  ⬆️  Find inline error message in preceding logs for more context.
+  ⬆️ ALERT  Find inline error message in preceding logs for more context.
   Please fix in a ${green}backwardly compatible${red} way; either have it  pass in the right data type for the field or deprecate the incompatible field and provide a compatible replacement field.
 `);
   }

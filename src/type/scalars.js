@@ -22,7 +22,7 @@ const MIN_INT = -2147483648;
 
 const green = '\x1B[32m';
 const yellow = '\x1B[33m';
-const white = '\x1B[37m';
+const red = '\e[1;31m';
 const warn = (error: string, msg: string) => {
   if (
     process.env.NODE_ENV === 'development' ||
@@ -30,10 +30,10 @@ const warn = (error: string, msg: string) => {
   ) {
     // eslint-disable-next-line no-console
     console.warn(`
-${yellow}${error}${white}:
+${yellow}${error}${red}:
   ${msg}
   ⬆️  Find inline error message in preceding logs for more context.
-  Please fix in a ${green}backwardly compatible${white} way; either have it  pass in the right data type for the field or deprecate the incompatible field and provide a compatible replacement field.
+  Please fix in a ${green}backwardly compatible${red} way; either have it  pass in the right data type for the field or deprecate the incompatible field and provide a compatible replacement field.
 `);
   }
 };

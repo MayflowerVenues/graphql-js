@@ -20,7 +20,7 @@ import { GraphQLScalarType } from './definition';
 const MAX_INT = 2147483647;
 const MIN_INT = -2147483648;
 
-const reset = "\x1b[0m"
+const reset = '\x1b[0m';
 const green = '\x1B[32m';
 const yellow = '\x1B[33m';
 const red = '\x1b[31m';
@@ -231,9 +231,7 @@ function serializeBoolean(outputValue: mixed): boolean {
   if (isFinite(coercedValue)) {
     return coercedValue !== 0;
   }
-  throw new GraphQLError(
-    `Boolean cannot represent a non boolean value: ${inspect(coercedValue)}`,
-  );
+  return Boolean(coercedValue);
 }
 
 function coerceBoolean(inputValue: mixed): boolean {
